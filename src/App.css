@@ -1,7 +1,14 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
+.content {
+  flex: 1 1 auto;
+}
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +42,107 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+body {
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1180px;
+  margin: auto;
+}
+
+.header {
+  flex: 0 0 72px;
+  height: 72px;
+}
+
+.header.color {
+  background-color: #3a80ba;
+}
+
+.header__title {
+  font-size: 40px;
+  color: #ffffff;
+  padding: 8px 0;
+  line-height: 49px;
+}
+
+.body__users {
+}
+
+.breadcrumbs {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 16px 0 0 0;
+}
+
+.breadcrumbs-item {
+  text-decoration: none;
+  color: #cccccc;
+  margin: 0 12px 0 0;
+}
+
+.breadcrumbs-item.active {
+  color: #3a80ba;
+}
+
+.arrow__bredcrumbs {
+  border: solid #cccccc;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 4px;
+  cursor: default;
+}
+
+.arrow {
+  border: solid #3a80ba;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.arrow__disabled {
+  border-color: #f1f1f1;
+  cursor: default;
+}
+
+.arrow.breadcrumbs {
+  border-color: #cccccc;
+  cursor: default;
+  border-width: 0 1px 1px 0;
+  margin-right: 10px;
+}
+
+.footer_main {
+  background-color: #1c3b55;
+  color: #ffffff;
+  height: 57px;
+  flex: 0 0 auto;
+  display: flex;
+}
+
+.footer__signs {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 29px;
+}
+
+.footer_appco {
+  font-size: 24px;
 }

@@ -1,0 +1,34 @@
+.table__title {
+  margin: 24px 0 16px 0;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 39px;
+}
+
+.buttons {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.button__page {
+  height: 48px;
+  width: 48px;
+  border: 0px;
+  border-radius: 8px;
+  margin: 0 4px;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: montserrat, sans-serif;
+}
+
+.button__page.active {
+  background-color: #3a80ba;
+  color: #ffffff;
+}
+
+.button__page.inactive {
+  border: 2px solid #f1f1f1;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}

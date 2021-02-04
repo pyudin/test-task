@@ -1,0 +1,35 @@
+.table {
+}
+
+.table__header {
+  background-color: #3a80ba;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: grid;
+  grid-template-columns: 5% 15% 15% 20% 7% 13% 10% 15%;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  height: 60px;
+}
+
+.table__header > * {
+  border-right: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table__header > *:last-child {
+  border-right: none;
+}
+
+.col {
+  height: 100%;
+}
+
+.table__row {
+  text-align: center;
+  padding: 6px 0;
+  display: grid;
+  grid-template-columns: 5% 15% 15% 20% 7% 13% 10% 15%;
+}
