@@ -1,3 +1,101 @@
 .main__header {
+  width: 1440px;
+  height: 655px;
   background: url("../img/Rectangle8.png");
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__title {
+  font-size: 48px;
+  line-height: 59px;
+  max-width: 586px;
+  margin: 48px 0 0 0;
+  color: #ffffff;
+}
+
+.main__text {
+  margin: 24px 0 0 0;
+  font-size: 20px;
+  line-height: 142%;
+  color: #ffffff;
+  max-width: 586px;
+}
+
+.btn__stats {
+  margin: 32px 0 0 0;
+  width: 154px;
+  height: 56px;
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 142%;
+  color: #3a80ba;
+}
+
+.main__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__bodytitle {
+  font-size: 32px;
+  line-height: 39px;
+  color: #1a1a1a;
+  max-width: 580px;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.main__bodytext {
+  font-size: 20px;
+  line-height: 142%;
+  text-align: center;
+  color: #7e7e7e;
+  max-width: 780px;
+  margin: 24px 0 0 0;
+}
+
+.body__cards {
+  display: flex;
+  margin: 40px 0 128px 0;
+}
+
+.body_card {
+  box-shadow: 0px 4px 16px;
+  border-radius: 32px;
+  height: 323px;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.card_title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #1a1a1a;
+}
+
+.card_text {
+  padding: 0 30px;
+  font-size: 16px;
+  color: #7e7e7e;
+}
+
+.main__footer {
+  width: 1440px;
+  height: 184px;
+  background: url("../img/Rectangle5.png");
+  display: flex;
+  align-items: flex-end;
 }

@@ -11,12 +11,13 @@ function Table() {
   }, []);
 
   const fetchUsers = async (page = 1) => {
-    // const data = await fetch(`http://localhost:8090/users?page=${page}`);
-    // const usersdata = await data.json();
-    axios(`http://localhost:8090/users?page=${page}`).then((data) =>
-      console.log(data)
-    );
-    // setUsers(usersdata);
+    const data = await fetch(`http://localhost:8090/users?page=${page}`);
+    const usersdata = await data.json();
+    // axios(`http://localhost:8090/users?page=${page}`).then((data) =>
+    //   console.log(data)http://jsonplaceholder.typicode.com/users
+    // );
+    console.log(usersdata);
+    setUsers(usersdata);
   };
 
   return (
@@ -32,13 +33,9 @@ function Table() {
           <div>Total clicks</div>
           <div>Total page views</div>
         </div>
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
-        <TableRow />
+        {users.map((user) => (
+          <TableRow user={user} />
+        ))}
       </div>
     </div>
   );

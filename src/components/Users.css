@@ -1,3 +1,14 @@
+.page__users {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.body__users {
+  flex: 1 1 auto;
+}
+
 .table__title {
   margin: 24px 0 16px 0;
   font-size: 32px;

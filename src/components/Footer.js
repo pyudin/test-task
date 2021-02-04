@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="footer_main">
+    <div className="footer_main color">
       <div className="container">
         <div className="footer__signs">
           <div className="footer_appco">AppCo</div>

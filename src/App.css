@@ -1,4 +1,4 @@
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -7,7 +7,8 @@
 
 .content {
   flex: 1 1 auto;
-}
+} */
+
 /*
 .App-logo {
   height: 40vmin;
@@ -71,9 +72,6 @@ body {
   line-height: 49px;
 }
 
-.body__users {
-}
-
 .breadcrumbs {
   font-size: 16px;
   line-height: 20px;
@@ -129,11 +127,14 @@ body {
 }
 
 .footer_main {
-  background-color: #1c3b55;
   color: #ffffff;
   height: 57px;
-  flex: 0 0 auto;
+  flex: 0 0 57px;
   display: flex;
+}
+
+.footer_main.color {
+  background-color: #1c3b55;
 }
 
 .footer__signs {
