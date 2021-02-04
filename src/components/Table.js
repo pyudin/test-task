@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./Table.css";
 import TableRow from "./TableRow";
-import axios from "axios";
 
-function Table() {
+function Table({ page }) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    fetchUsers(page);
+  }, [page]);
 
   const fetchUsers = async (page = 1) => {
     const data = await fetch(`http://localhost:8090/users?page=${page}`);
     const usersdata = await data.json();
-    // axios(`http://localhost:8090/users?page=${page}`).then((data) =>
-    //   console.log(data)http://jsonplaceholder.typicode.com/users
-    // );
-    console.log(usersdata);
     setUsers(usersdata);
   };
 
@@ -34,7 +29,7 @@ function Table() {
           <div>Total page views</div>
         </div>
         {users.map((user) => (
-          <TableRow user={user} />
+          <TableRow user={user} key={user.id} />
         ))}
       </div>
     </div>

@@ -31,30 +31,30 @@ function HomePage() {
           business greatly. Learn more about our work!
         </div>
         <div className="body__cards">
-          <div className="body_card">
-            <div className="card_image">
-              <img src="../img/Vector.jpg" alt="..." />
+          <div className="body__card">
+            <div className="card__image">
+              <div className="card__pic1"></div>
             </div>
-            <div className="card_title">Clean Design</div>
-            <div className="card_text">
+            <div className="card__title">Clean Design</div>
+            <div className="card__text">
               Increase sales by showing true dynamics of your website.
             </div>
           </div>
-          <div className="body_card">
-            <div className="card_image">
-              <img src="../img/Vector.jpg" alt="..." />
+          <div className="body__card">
+            <div className="card__image">
+              <div className="card__pic2"></div>
             </div>
-            <div className="card_title">Secure Data</div>
-            <div className="card_text">
+            <div className="card__title">Secure Data</div>
+            <div className="card__text">
               Build your online store’s trust using Social Proof & Urgency.
             </div>
           </div>
-          <div className="body_card">
-            <div className="card_image">
-              <img src="../img/Vector.jpg" alt="..." />
+          <div className="body__card">
+            <div className="card__image">
+              <div className="card__pic3"></div>
             </div>
-            <div className="card_title">Retina Ready</div>
-            <div className="card_text">
+            <div className="card__title">Retina Ready</div>
+            <div className="card__text">
               Realize importance of social proof in customer’s purchase
               decision.
             </div>
@@ -63,8 +63,12 @@ function HomePage() {
       </div>
       <div className="main__footer">
         <div className="container">
-          <div>
-            <input type="text" />
+          <div className="footer__sub">
+            <input
+              type="text"
+              className="footer__sub"
+              defaultValue="Enter your email"
+            />
           </div>
           <div className="footer_main">
             <div className="container">

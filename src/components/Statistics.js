@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import "./Statistics.css";
@@ -11,10 +11,13 @@ const styleLinks = {
 };
 
 function Statistics({ match }) {
+  const [user, setUser] = useState({});
+
   const fetchUser = async (page = 1) => {
     const data = await fetch(`http://localhost:8090/users/${match.params.id}`);
     const userdata = await data.json();
     console.log(userdata);
+    setUser(userdata);
   };
 
   useEffect(() => {
@@ -22,29 +25,14 @@ function Statistics({ match }) {
 
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
-      type: "bar",
+      type: "line",
       data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
         datasets: [
           {
             label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(255, 159, 64, 0.2)",
-            ],
-            borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(255, 159, 64, 1)",
-            ],
+            data: [12, 19, 3, 5, 2, 3, 4, 20],
+
             borderWidth: 1,
           },
         ],
@@ -85,11 +73,15 @@ function Statistics({ match }) {
             <span className="breadcrumbs-item">
               <i className="arrow__bredcrumbs right "></i>
             </span>
-            <span className="breadcrumbs-item active">{match.params.id}</span>
+            <span className="breadcrumbs-item active">
+              {user.first_name} {user.last_name}
+            </span>
           </div>
-          <div className="table__title">{match.params.id}</div>
+          <div className="table__title">
+            {user.first_name} {user.last_name}
+          </div>
 
-          <canvas id="myChart" width="400" height="400"></canvas>
+          <canvas id="myChart" width="400px" height="100px"></canvas>
         </div>
       </div>
       <Footer />

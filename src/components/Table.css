@@ -6,7 +6,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   display: grid;
-  grid-template-columns: 5% 15% 15% 20% 7% 13% 10% 15%;
+  grid-template-columns: 4% 13% 13% 26% 7% 13% 10% 14%;
   color: #ffffff;
   font-size: 16px;
   text-align: center;
@@ -23,14 +23,18 @@
   border-right: none;
 }
 
-.col {
-  height: 100%;
-}
-
 .table__row {
   text-align: center;
   padding: 6px 0;
   display: grid;
-  grid-template-columns: 5% 15% 15% 20% 7% 13% 10% 15%;
+  grid-template-columns: 4% 13% 13% 26% 7% 13% 10% 14%;
   text-decoration: none;
+}
+
+.table__data {
+  height: 32px;
+}
+.table__data:nth-child {
+  height: 32px;
+  background-color: darkgray;
 }

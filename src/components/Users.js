@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import "./Users.css";
 import Table from "./Table";
@@ -12,6 +12,8 @@ const styleLinks = {
 };
 
 function Users() {
+  const [page, setPage] = useState(1);
+
   return (
     <div className="page__users">
       <Header />
@@ -29,12 +31,25 @@ function Users() {
             <span className="breadcrumbs-item active">User statistics</span>
           </div>
           <div className="table__title">User statistics</div>
-          <Table />
+          <Table page={page} />
           <div className="buttons">
             <i className="arrow left arrow__disabled"></i>
 
-            <button className="button__page active">1</button>
-            <button className="button__page inactive">2</button>
+            <button className="button__page active" onClick={() => setPage(1)}>
+              1
+            </button>
+            <button
+              className="button__page inactive"
+              onClick={() => setPage(2)}
+            >
+              2
+            </button>
+            <button
+              className="button__page inactive"
+              onClick={() => setPage(3)}
+            >
+              3
+            </button>
             <i className="arrow right "></i>
           </div>
         </div>
