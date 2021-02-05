@@ -30,16 +30,14 @@
   font-size: 16px;
   line-height: 20px;
   font-family: montserrat, sans-serif;
+  outline: none !important;
+  border: 2px solid #f1f1f1;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #1a1a1a;
 }
 
 .button__page.active {
   background-color: #3a80ba;
   color: #ffffff;
-}
-
-.button__page.inactive {
-  border: 2px solid #f1f1f1;
-  box-sizing: border-box;
-  background-color: #ffffff;
-  color: #1a1a1a;
 }

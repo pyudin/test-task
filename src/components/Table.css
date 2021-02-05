@@ -38,3 +38,7 @@
   height: 32px;
   background-color: darkgray;
 }
+
+.trow:nth-child(odd) {
+  background-color: #f1f1f1;
+}

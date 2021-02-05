@@ -29,7 +29,7 @@ function Table({ page }) {
           <div>Total page views</div>
         </div>
         {users.map((user) => (
-          <TableRow user={user} key={user.id} />
+          <TableRow user={user} key={user.id} className="trow" />
         ))}
       </div>
     </div>

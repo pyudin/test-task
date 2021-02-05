@@ -20,7 +20,7 @@ function TableRow({ user }) {
   };
 
   return (
-    <div>
+    <div className="trow">
       <Link to={`/users/${user.id}`} style={styleLinks}>
         <div className="table__row">
           <div>{user.id}</div>

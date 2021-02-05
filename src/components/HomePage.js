@@ -67,7 +67,7 @@ function HomePage() {
             <input
               type="text"
               className="footer__sub"
-              defaultValue="Enter your email"
+              placeholder="Enter your email"
             />
           </div>
           <div className="footer_main">

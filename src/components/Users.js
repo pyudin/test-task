@@ -13,7 +13,7 @@ const styleLinks = {
 
 function Users() {
   const [page, setPage] = useState(1);
-
+  const pages = [1, 2, 3, 4, 5];
   return (
     <div className="page__users">
       <Header />
@@ -35,21 +35,15 @@ function Users() {
           <div className="buttons">
             <i className="arrow left arrow__disabled"></i>
 
-            <button className="button__page active" onClick={() => setPage(1)}>
-              1
-            </button>
-            <button
-              className="button__page inactive"
-              onClick={() => setPage(2)}
-            >
-              2
-            </button>
-            <button
-              className="button__page inactive"
-              onClick={() => setPage(3)}
-            >
-              3
-            </button>
+            {pages.map((el) => (
+              <button
+                className={`button__page ${page === el ? "active" : ""}`}
+                onClick={() => setPage(el)}
+              >
+                {el}
+              </button>
+            ))}
+
             <i className="arrow right "></i>
           </div>
         </div>
