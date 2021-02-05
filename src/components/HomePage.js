@@ -63,12 +63,15 @@ function HomePage() {
       </div>
       <div className="main__footer">
         <div className="container">
-          <div className="footer__sub">
+          <div className="footer__subdiv">
             <input
               type="text"
               className="footer__sub"
               placeholder="Enter your email"
             />
+            <div className="sub__btn">
+              <div>Subscribe</div>
+            </div>
           </div>
           <div className="footer_main">
             <div className="container">

@@ -128,19 +128,37 @@
   height: 184px;
   background: url("../img/Rectangle5.png");
   display: flex;
-  align-items: center;
 }
 
+.footer__subdiv {
+  height: 64px;
+  width: 580px;
+  margin: 0 0 0 22%;
+  position: relative;
+}
 .footer__sub {
   background: #ffffff;
   border: 1px solid #f1f1f1;
   box-sizing: border-box;
   border-radius: 10px;
-  height: 64px;
-  width: 580px;
+  height: 100%;
+  width: 100%;
   font-size: 16px;
   line-height: 162%;
   color: #b9b9b9;
-  margin: 0 0 0 30%;
-  /* padding: 0 20px; */
+}
+
+.sub__btn {
+  width: 176px;
+  height: 56px;
+  background: #3a80ba;
+  border-radius: 8px;
+  position: absolute;
+  left: 401px;
+  top: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
 }

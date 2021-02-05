@@ -33,7 +33,10 @@ function Users() {
           <div className="table__title">User statistics</div>
           <Table page={page} />
           <div className="buttons">
-            <i className="arrow left arrow__disabled"></i>
+            <i
+              className={`arrow left ${page === 1 ? "arrow__disabled" : ""}`}
+              onClick={() => (page > 1 ? setPage(page - 1) : page)}
+            ></i>
 
             {pages.map((el) => (
               <button
@@ -44,7 +47,10 @@ function Users() {
               </button>
             ))}
 
-            <i className="arrow right "></i>
+            <i
+              className={`arrow right ${page === 5 ? "arrow__disabled" : ""}`}
+              onClick={() => (page < 5 ? setPage(page + 1) : page)}
+            ></i>
           </div>
         </div>
       </div>
