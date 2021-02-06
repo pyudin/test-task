@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import "./Statistics.css";
+import "../styles/Statistics.css";
 import { Link } from "react-router-dom";
 import Chart from "chart.js";
 
@@ -14,42 +14,107 @@ function Statistics({ match }) {
   const [user, setUser] = useState({});
 
   const fetchUser = async (page = 1) => {
-    const data = await fetch(`http://localhost:8090/users/${match.params.id}`);
+    const data = await fetch(
+      `http://localhost:8090/api/users/${match.params.id}`
+    );
     const userdata = await data.json();
-    console.log(userdata);
+
     setUser(userdata);
   };
 
   useEffect(() => {
     fetchUser();
+  }, []);
 
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
+  useEffect(() => {
+    let ctx = document.getElementById("myChart");
+    let myChart = new Chart(ctx, {
       type: "line",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: user.data_date,
         datasets: [
           {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3, 4, 20],
-
-            borderWidth: 1,
+            label: "# of Clicks",
+            data: user.data_clicks,
+            backgroundColor: "rgba(220,220,220,0)",
+            borderColor: "#3a80ba",
+            fill: "origin",
+            pointBorderWidth: 0,
+            borderWidth: 4,
           },
         ],
       },
       options: {
+        elements: {
+          line: {
+            fill: false,
+          },
+        },
+        tooltips: {
+          mode: "nearest",
+        },
         scales: {
           yAxes: [
             {
               ticks: {
+                stepSize: 200,
                 beginAtZero: true,
               },
+            },
+          ],
+          xAxes: [
+            {
+              display: false,
             },
           ],
         },
       },
     });
-  }, []);
+
+    let ctx2 = document.getElementById("myChart2");
+    let myChart2 = new Chart(ctx2, {
+      type: "line",
+      data: {
+        labels: user.data_date,
+        datasets: [
+          {
+            label: "# of Page views",
+            data: user.data_page_views,
+            backgroundColor: "rgba(220,220,220,0)",
+            borderColor: "#3a80ba",
+            fill: "origin",
+            pointBorderWidth: 0,
+            borderWidth: 4,
+          },
+        ],
+      },
+      options: {
+        elements: {
+          line: {
+            fill: false,
+          },
+        },
+        tooltips: {
+          mode: "nearest",
+        },
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                stepSize: 200,
+                beginAtZero: true,
+              },
+            },
+          ],
+          xAxes: [
+            {
+              display: false,
+            },
+          ],
+        },
+      },
+    });
+  }, [user]);
 
   return (
     <div className="statistics">
@@ -80,8 +145,10 @@ function Statistics({ match }) {
           <div className="table__title">
             {user.first_name} {user.last_name}
           </div>
-
+          <div className="table__subtitle">Clicks</div>
           <canvas id="myChart" width="400px" height="100px"></canvas>
+          <div className="table__subtitle">Views</div>
+          <canvas id="myChart2" width="400px" height="100px"></canvas>
         </div>
       </div>
       <Footer />

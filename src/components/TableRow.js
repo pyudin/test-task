@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Table.css";
 
 function TableRow({ user }) {
-  const [userdata, setUserdata] = useState({});
+  // const [userdata, setUserdata] = useState({});
   const styleLinks = {
     color: "#1A1A1A",
     textDecoration: "none",
   };
 
-  useEffect(() => {
-    fetchUser();
-  }, []);
+  // useEffect(() => {
+  //   fetchUser();
+  // }, []);
 
-  const fetchUser = async () => {
-    const data = await fetch(`http://localhost:8090/users/${user.id}`);
-    const usersdata = await data.json();
-    setUserdata(usersdata);
-  };
+  // const fetchUser = async () => {
+  //   const data = await fetch(`http://localhost:8090/api/users/${user.id}`);
+  //   const usersdata = await data.json();
+  //   setUserdata(usersdata);
+  // };
 
   return (
     <div className="trow">
@@ -29,8 +28,8 @@ function TableRow({ user }) {
           <div>{user.email}</div>
           <div>{user.gender}</div>
           <div>{user.ip_address}</div>
-          <div>{userdata.total_clicks}</div>
-          <div>{userdata.total_page_views}</div>
+          <div>{user.total_clicks}</div>
+          <div>{user.total_page_views}</div>
         </div>
       </Link>
     </div>

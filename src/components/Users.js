@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "../App.css";
-import "./Users.css";
+import React, { useEffect, useState } from "react";
+import "../styles/App.css";
+import "../styles/Users.css";
 import Table from "./Table";
 import { Link } from "react-router-dom";
 import Header from "./Header";
@@ -13,7 +13,26 @@ const styleLinks = {
 
 function Users() {
   const [page, setPage] = useState(1);
-  const pages = [1, 2, 3, 4, 5];
+  const [pages, setPages] = useState([1, 2, 3, 4, 5]);
+
+  const MAX_PAGE = 20;
+
+  const rightArrowHandler = () => {
+    if (pages[4] >= MAX_PAGE) return;
+    setPages(pages.map((it) => it + 1));
+  };
+
+  const leftArrowHandler = () => {
+    if (pages[0] <= 1) return;
+    setPages(pages.map((it) => it - 1));
+  };
+
+  useEffect(() => {
+    if (page === pages[4] && page < MAX_PAGE)
+      setPages(pages.map((it) => it + 1));
+    if (page === pages[0] && page > 1) setPages(pages.map((it) => it - 1));
+  }, [page]);
+
   return (
     <div className="page__users">
       <Header />
@@ -34,22 +53,33 @@ function Users() {
           <Table page={page} />
           <div className="buttons">
             <i
-              className={`arrow left ${page === 1 ? "arrow__disabled" : ""}`}
-              onClick={() => (page > 1 ? setPage(page - 1) : page)}
+              className={`arrow left ${
+                pages[0] === 1 ? "arrow__disabled" : ""
+              }`}
+              onClick={leftArrowHandler}
             ></i>
 
             {pages.map((el) => (
-              <button
-                className={`button__page ${page === el ? "active" : ""}`}
-                onClick={() => setPage(el)}
-              >
-                {el}
-              </button>
+              <Link to={`/users`}>
+                <button
+                  key={el}
+                  className={`button__page ${page === el ? "active" : ""}`}
+                  onClick={() => {
+                    setPage(el);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  {el}
+                </button>
+              </Link>
             ))}
 
             <i
-              className={`arrow right ${page === 5 ? "arrow__disabled" : ""}`}
-              onClick={() => (page < 5 ? setPage(page + 1) : page)}
+              className={`arrow right ${
+                pages[4] === 20 ? "arrow__disabled" : ""
+              }`}
+              // onClick={() => setPage(page + 1)}
+              onClick={rightArrowHandler}
             ></i>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./App.css";
+import "./styles/App.css";
 import Users from "./components/Users";
 import HomePage from "./components/HomePage";
 import Statistics from "./components/Statistics";

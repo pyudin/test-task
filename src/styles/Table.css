@@ -10,7 +10,7 @@
   color: #ffffff;
   font-size: 16px;
   text-align: center;
-  height: 60px;
+  height: 48px;
 }
 
 .table__header > * {
@@ -29,6 +29,13 @@
   display: grid;
   grid-template-columns: 4% 13% 13% 26% 7% 13% 10% 14%;
   text-decoration: none;
+}
+.table__row > * {
+  border-right: 1px solid #ffffff;
+}
+
+.table__row > *:last-child {
+  border-right: none;
 }
 
 .table__data {
