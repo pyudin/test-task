@@ -1,9 +1,7 @@
-import logo from "./logo.svg";
 import "./styles/App.css";
 import Users from "./components/Users";
 import HomePage from "./components/HomePage";
 import Statistics from "./components/Statistics";
-
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
