@@ -2,21 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function TableRow({ user }) {
-  // const [userdata, setUserdata] = useState({});
   const styleLinks = {
     color: "#1A1A1A",
     textDecoration: "none",
   };
-
-  // useEffect(() => {
-  //   fetchUser();
-  // }, []);
-
-  // const fetchUser = async () => {
-  //   const data = await fetch(`http://localhost:8090/api/users/${user.id}`);
-  //   const usersdata = await data.json();
-  //   setUserdata(usersdata);
-  // };
 
   return (
     <div className="trow">

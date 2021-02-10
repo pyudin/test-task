@@ -10,9 +10,7 @@ function Table({ page }) {
   }, [page]);
 
   const fetchUsers = async (page = 1) => {
-    const data = await fetch(
-      `http://localhost:8090/api/users?page=${page}&limit=50`
-    );
+    const data = await fetch(`/api/users?page=${page}&limit=50`);
     const usersdata = await data.json();
     setUsers(usersdata);
   };
