@@ -135,6 +135,7 @@ body {
   height: 57px;
   flex: 0 0 57px;
   display: flex;
+  /* justify-content: space-between; */
 }
 
 .footer_main.color {
