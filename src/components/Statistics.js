@@ -14,7 +14,9 @@ function Statistics({ match }) {
   const [user, setUser] = useState({});
 
   const fetchUser = async (page = 1) => {
-    const data = await fetch(`/api/users/${match.params.id}`);
+    const data = await fetch(
+      `http://localhost:8090/api/users/${match.params.id}`
+    );
     const userdata = await data.json();
 
     setUser(userdata);
